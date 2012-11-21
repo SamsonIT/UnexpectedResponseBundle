@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="samson_unexpected_response.listener" class="Samson\Bundle\UnexpectedResponseBundle\Listener\UnexpectedResponseListener">
+            <tag name="kernel.event_listener" event="kernel.exception" method="onKernelException" priority="1024" />
+        </service>
+    </services>
+</container>
