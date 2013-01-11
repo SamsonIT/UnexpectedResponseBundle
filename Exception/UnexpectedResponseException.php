@@ -21,6 +21,7 @@ class UnexpectedResponseException extends RuntimeException implements HttpExcept
     public function __construct(Response $response)
     {
         $this->response = $response;
+        parent::__construct('If you are reading this, you need to add Samson\Bundle\AutocompleteBundle\UnexpectedResponseBundle() to the bundles in your AppKernel');
     }
 
     /**
