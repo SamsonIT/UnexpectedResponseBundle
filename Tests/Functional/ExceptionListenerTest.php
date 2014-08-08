@@ -15,6 +15,8 @@ class ExceptionListenerTest extends WebTestCase
         $kernel = static::createKernel();
         $kernel->boot();
 
+        $kernel->getContainer()->get('event_dispatcher')->removeSubscriber($kernel->getContainer()->get('security.firewall'));
+
         $request = new Request;
         $request->attributes->set('_controller', function() {
             $response = new Response('Exception response', 200, array('Content-type' => 'text/plain'));
@@ -30,6 +32,8 @@ class ExceptionListenerTest extends WebTestCase
     {
         $kernel = static::createKernel();
         $kernel->boot();
+
+        $kernel->getContainer()->get('event_dispatcher')->removeSubscriber($kernel->getContainer()->get('security.firewall'));
 
         $request = new Request;
         $request->attributes->set('_controller', function() {
