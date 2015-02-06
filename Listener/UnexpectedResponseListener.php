@@ -12,6 +12,7 @@ class UnexpectedResponseListener
 {
 
     /**
+     * Listen for UnexpectedResponseExceptions in the kernel, catch them and set the response on it
      * @param GetResponseForExceptionEvent $event
      */
     public function onKernelException(GetResponseForExceptionEvent $event)
